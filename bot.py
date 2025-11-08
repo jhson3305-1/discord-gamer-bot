@@ -13,8 +13,8 @@ logging.basicConfig(level=logging.INFO)
 # ==============================
 # 환경 변수 확인
 # ==============================
-DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
-GUILD_ID_RAW = os.getenv("GUILD_ID")
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN","")
+GUILD_ID_RAW = os.getenv("GUILD_ID","")
 
 if not DISCORD_TOKEN:
     print("❌ DISCORD_TOKEN 환경 변수가 설정되지 않았습니다.")
@@ -217,3 +217,4 @@ async def team_split(interaction: discord.Interaction, team_count: int = 2):
 if __name__ == "__main__":
     keep_alive()  # Render용 포트 오픈 (Flask)
     bot.run(DISCORD_TOKEN)
+
